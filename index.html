@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Koenigsegg Viola — Vetrina Premium</title>
   <meta name="description" content="Koenigsegg viola con fibra di carbonio a vista — vetrina premium, contattaci per info e prenotare una visione.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="preload" as="image" href="https://www.carscoops.com/wp-content/uploads/2019/08/14957cad-koenigsegg-regera.jpg">
   <style>
     :root{--accent:#7b3fe4;--bg:#0b0b0b;--glass:rgba(255,255,255,0.05);--card:#0f0f10}
     /* Carbon-fiber like background */
@@ -34,6 +36,11 @@
     @media (max-width:920px){.hero{grid-template-columns:1fr;}.car-img{height:320px}} 
     /* small flourish */
     .glass-panel{backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px}
+    .svg-decor{width:100%;height:72px;margin-bottom:12px;display:block}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.04)}
+    .timeline{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+    .timeline-item{background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);padding:10px;border-radius:8px;border-left:4px solid var(--accent)}
     /* modal */
     .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);opacity:0;pointer-events:none;transition:opacity .2s}
     .modal.show{opacity:1;pointer-events:auto}
@@ -68,6 +75,40 @@
         <footer>Contatto diretto — risposte entro 24h • Consegna su richiesta</footer>
       </div>
     </div>
+
+      <div class="wrap">
+        <svg class="svg-decor" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#2a0f44" stop-opacity="0.6"/>
+              <stop offset="1" stop-color="#7b3fe4" stop-opacity="0.3"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,20 C150,120 350,0 600,30 C850,60 1050,10 1200,80 L1200,120 L0,120 Z" fill="url(#g)"></path>
+        </svg>
+
+        <div class="card">
+          <h2 style="margin:0 0 8px">La storia di Koenigsegg</h2>
+          <p style="margin:0 0 10px;color:#d7d7d7;line-height:1.6">Koenigsegg Automotive AB è stata fondata da Christian von Koenigsegg nel 1994 ad Ängelholm, in Svezia, con l'ambizione di costruire la migliore supercar al mondo. Dopo anni di sviluppo, il primo modello di produzione, la CC8S, è stato presentato nel 2002 e ha segnato l'ingresso del brand nell'olimpo delle supercar per prestazioni e innovazione.</p>
+          <p style="margin:0 0 10px;color:#cfcfcf;line-height:1.6">Negli anni successivi Koenigsegg ha continuato a innovare con modelli come la Agera, One:1 e Regera, introducendo tecnologie esclusive come la fibra di carbonio avanzata, pacchetti aerodinamici su misura e soluzioni ibride ad alte prestazioni. Il marchio è noto per produzioni limitate, cura artigianale e personalizzazioni estreme richieste dai collezionisti.</p>
+
+          <div class="timeline">
+            <div class="timeline-item"><strong>1994</strong> — Fondazione dell'azienda da parte di Christian von Koenigsegg.</div>
+            <div class="timeline-item"><strong>2002</strong> — Prima produzione: CC8S.</div>
+            <div class="timeline-item"><strong>2010-2015</strong> — Lancio di Agera e sviluppo di tecnologie ad alte prestazioni.</div>
+            <div class="timeline-item"><strong>2015</strong> — Presentazione della Regera, ibrida con Koenigsegg Direct Drive.</div>
+          </div>
+
+          <h3 style="margin-top:14px">Galleria</h3>
+          <div class="gallery">
+            <img src="https://www.carscoops.com/wp-content/uploads/2019/08/14957cad-koenigsegg-regera.jpg" alt="Koenigsegg Regera viola" loading="lazy" width="1200" height="700">
+            <img src="https://www.carscoops.com/wp-content/uploads/2017/03/koenigsegg-agera-r-1.jpg" alt="Koenigsegg Agera" loading="lazy" width="1200" height="700">
+            <img src="https://www.carscoops.com/wp-content/uploads/2014/06/koenigsegg-ccxr-1.jpg" alt="Koenigsegg storico" loading="lazy" width="1200" height="700">
+          </div>
+
+          <p style="margin-top:12px;color:#bdbdbd">Ottimizzazioni incluse: immagini con `loading="lazy"` e attributi `width/height` per ridurre il layout shift, preload dell'immagine hero per migliorare il Largest Contentful Paint, e uso di SVG decorativi vettoriali leggeri per effetto grafico senza impatto sulle performance.</p>
+        </div>
+      </div>
   </div>
 
   <div class="wrap">
