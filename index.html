@@ -20,7 +20,7 @@
     .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:14px;padding:18px;box-shadow:0 6px 30px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.04)}
     .car-wrap{position:relative;overflow:hidden;border-radius:10px}
-    .car-img{width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;border:4px solid rgba(0,0,0,0.5)}
+    .car-img{width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;border:4px solid rgba(0,0,0,0.5);cursor:pointer}
     .badge{position:absolute;left:18px;top:18px;background:linear-gradient(90deg,var(--accent),#b06cff);padding:8px 12px;border-radius:999px;font-weight:700;color:#fff;font-size:14px;box-shadow:0 6px 18px rgba(123,63,228,0.18)}
     h1{margin:0 0 8px;font-size:24px}
     .sub{color:#cfcfcf;margin-bottom:16px}
@@ -47,11 +47,28 @@
     .modal-card{background:#0b0b0c;padding:20px;border-radius:12px;min-width:320px;max-width:540px;border:1px solid rgba(255,255,255,0.04)}
     .form-row{display:flex;gap:8px}
     input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:#071017;color:#eee}
+    /* Header and dropdown */
+    header{position:fixed;top:0;left:0;width:100%;background:var(--bg);z-index:1000;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.04)}
+    .menu-btn{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;padding:5px}
+    .dropdown-menu{position:absolute;top:100%;left:0;width:100%;background:var(--bg);border:1px solid rgba(255,255,255,0.04);max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+    .dropdown-menu.show{max-height:200px}
+    .dropdown-menu a{display:block;padding:15px 20px;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.02)}
+    .dropdown-menu a:hover{background:var(--glass)}
   </style>
 </head>
 <body>
+  <header>
+    <h2>Koenigsegg</h2>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a href="#hero">Home</a>
+      <a href="#storia">Storia</a>
+      <a href="#galleria">Galleria</a>
+      <a href="#regera">Contatto</a>
+    </div>
+  </header>
   <div class="wrap">
-    <div class="hero">
+    <div class="hero" id="hero">
       <div class="card car-wrap">
         <div class="badge">Edizione Premium</div>
         <img class="car-img" src="https://www.carscoops.com/wp-content/uploads/2019/08/14957cad-koenigsegg-regera.jpg" alt="Koenigsegg viola in fibra di carbonio a vista">
@@ -88,7 +105,7 @@
         </svg>
 
         <div class="card">
-          <h2 style="margin:0 0 8px">La storia di Koenigsegg</h2>
+          <h2 style="margin:0 0 8px" id="storia">La storia di Koenigsegg</h2>
           <p style="margin:0 0 10px;color:#d7d7d7;line-height:1.6">Koenigsegg Automotive AB è stata fondata da Christian von Koenigsegg nel 1994 ad Ängelholm, in Svezia, con l'ambizione di costruire la migliore supercar al mondo. Dopo anni di sviluppo, il primo modello di produzione, la CC8S, è stato presentato nel 2002 e ha segnato l'ingresso del brand nell'olimpo delle supercar per prestazioni e innovazione.</p>
           <p style="margin:0 0 10px;color:#cfcfcf;line-height:1.6">Negli anni successivi Koenigsegg ha continuato a innovare con modelli come la Agera, One:1 e Regera, introducendo tecnologie esclusive come la fibra di carbonio avanzata, pacchetti aerodinamici su misura e soluzioni ibride ad alte prestazioni. Il marchio è noto per produzioni limitate, cura artigianale e personalizzazioni estreme richieste dai collezionisti.</p>
 
@@ -99,7 +116,7 @@
             <div class="timeline-item"><strong>2015</strong> — Presentazione della Regera, ibrida con Koenigsegg Direct Drive.</div>
           </div>
 
-          <h3 style="margin-top:14px">Galleria</h3>
+          <h3 style="margin-top:14px" id="galleria">Galleria</h3>
           <div class="gallery">
             <img src="https://www.carscoops.com/wp-content/uploads/2019/08/14957cad-koenigsegg-regera.jpg" alt="Koenigsegg Regera viola" loading="lazy" width="1200" height="700">
             <img src="https://www.hdmotori.it/app/uploads/2025/07/Koenigsegg-Agera-R-Legends-Division.png" alt="Koenigsegg Agera" loading="lazy" width="1200" height="700">
@@ -111,11 +128,13 @@
 
   <div class="wrap">
     <div class="card" style="margin-top:18px">
-      <h2 style="margin:0 0 8px">La storia della Regera</h2>
+      <h2 style="margin:0 0 8px" id="regera">La storia della Regera</h2>
       <p style="margin:0 0 10px;color:#d7d7d7;line-height:1.6">La Koenigsegg Regera è il risultato dell'approccio visionario del costruttore svedese verso le hypercar ibride: presentata per la prima volta al pubblico nel 2015, unisce un possente V8 a soluzioni elettriche di alto livello per offrire prestazioni straordinarie senza il tradizionale cambio. La Regera ha introdotto il concetto di trasmissione diretta Koenigsegg Direct Drive, riducendo le perdite meccaniche e migliorando l'efficienza e la risposta.</p>
       <p style="margin:0;color:#cfcfcf;line-height:1.6">Prodotta in quantità limitata e proposta come ammiraglia tecnologica del marchio, la Regera combina lusso su misura, materiali avanzati come la fibra di carbonio a vista e una filosofia orientata sia alla massima potenza che al comfort di guida. Ogni esemplare è spesso personalizzato, rendendo ogni Regera un pezzo unico nella storia delle supercar moderne.</p>
     </div>
   </div>
+
+  <audio id="carSound" src="sound.mp3" preload="auto"></audio>
 
   <!-- Modal contatto -->
   <div class="modal" id="modal">
@@ -138,10 +157,24 @@
     const contactBtn = document.getElementById('contactBtn');
     const bookBtn = document.getElementById('bookBtn');
     const closeBtn = document.getElementById('closeBtn');
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const carImg = document.querySelector('.car-img');
+    const carSound = document.getElementById('carSound');
+
     contactBtn.addEventListener('click', ()=> modal.classList.add('show'));
     bookBtn.addEventListener('click', ()=> modal.classList.add('show'));
     closeBtn.addEventListener('click', ()=> modal.classList.remove('show'));
     modal.addEventListener('click', (e)=>{ if(e.target===modal) modal.classList.remove('show')});
+
+    menuBtn.addEventListener('click', () => {
+      dropdownMenu.classList.toggle('show');
+    });
+
+    carImg.addEventListener('click', () => {
+      carSound.play();
+    });
+
     document.getElementById('contactForm').addEventListener('submit', (e)=>{
       e.preventDefault();
       // Simulazione invio — qui l'integrazione server
